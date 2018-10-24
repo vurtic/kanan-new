@@ -26,7 +26,7 @@ namespace kanan {
         m_wmHook{ nullptr },
         m_game{ nullptr },
         m_mods{ m_path },
-        m_isUIOpen{ true },
+        m_isUIOpen{ false },
         m_isLogOpen{ false },
         m_isAboutOpen{ false },
         m_isInitialized{ false },
