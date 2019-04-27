@@ -380,7 +380,7 @@ void LauncherApp::mainUI() {
                         { "scope", "us.launcher.all" },
                         { "device_id", getDeviceID() }
                     }.dump() };
-                    auto response = httpPost("https://accounts.nexon.net/account/login/launcher", header, body);
+                    auto response = httpPost("https://www.nexon.com/account-webapi/login/launcher", header, body);
                     auto jsonResponse = json::parse(response);
                     auto token = jsonResponse.at("access_token").get<string>();
                     auto b64Token = stringEncode(CRYPT_STRING_BASE64, (const uint8_t*)token.data(), token.length());
@@ -406,9 +406,9 @@ void LauncherApp::mainUI() {
                             "locale:USA " <<
                             "env:Regular " <<
                             "setting:file://data/features.xml " <<
-                            "logip:208.85.109.35 " <<
+                            "logip:35.162.171.43 " <<
                             "logport:11000 " <<
-                            "chatip:208.85.109.37 " <<
+                            "chatip:54.214.176.167 " <<
                             "chatport:8002 " <<
                             "/P:" << jsonResponse.at("passport").get<string>() << " " <<
                             "-bgloader").str();
